@@ -32,7 +32,10 @@ public class funCall {
 //        System.out.println(ans);
 
 //        fun2(13);
-          printN(100);
+//          printN(100);
+        System.out.print(fact(4));
+        System.out.println("\n");
+        System.out.println(fib(4));
     }
 
     static int fun(int n) {
@@ -46,19 +49,36 @@ public class funCall {
     static void fun2(int n) {
         if (n == 0) return;
         fun2(n / 2);
-        System.out.print(n % 2+ " ");
+        System.out.print(n % 2 + " ");
     }
 
     //print N to 1 AND print 1 to N.
-    static void printN(int n){
+    static void printN(int n) {
         //-----N to 1
-        if(n==0) return;
+        if (n == 0) return;
         System.out.println(n);
-        printN(n-1);
-      //----- 1 to N-----
+        printN(n - 1);
+        //----- 1 to N-----
 //        if(n==0) return;
 //        printN(n-1);
 //        System.out.println(n);
+    }
+
+    //Factorial using Recursion
+    static int fact(int n) {
+        if (n == 0) {
+            return 1;
+        }
+        return n * fact(n - 1);
+    }
+
+    //Fibonacci of Number
+    static int fib(int n) {
+        //two base Case required....
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+
+        return fib(n - 1) + fib(n - 2);
     }
 
 }
