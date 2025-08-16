@@ -26,7 +26,7 @@ public class repeatStringMatch {
 //        return -1;
 
         StringBuilder repeated=new StringBuilder();
-        int count=0;
+        int count=0; 
         while(repeated.length()<b.length()){
             repeated.append(a);
             count++;
