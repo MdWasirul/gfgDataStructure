@@ -28,6 +28,15 @@ public class basicll {
         }
     }
 
+    public static void insertAtEnd(Node head, int val) {
+        Node temp = new Node(val);
+        Node t = head;
+        while (t.next != null) {
+            t = t.next;
+        }
+        t.next = temp;
+    }
+
     public static class Node {  //Node-> ek data Type hong Node type ka;
         int data;  //value
         Node next;  //address of next node (contain next Node)
@@ -71,8 +80,10 @@ public class basicll {
         //print using functions;
         display(a);
         System.out.println();
-        displayRecursive(a);
-        System.out.println();
-        System.out.println(length(a));
+//        displayRecursive(a);
+//        System.out.println();
+//        System.out.println(length(a));
+        insertAtEnd(a, 30);
+        display(a);
     }
 }
