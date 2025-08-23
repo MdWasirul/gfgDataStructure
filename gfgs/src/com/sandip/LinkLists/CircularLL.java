@@ -93,14 +93,42 @@ public class CircularLL {
         return curr.next;
 
     }
-    //delete Kth node
 
+    //delete Kth node
+    public static Node deleteKth(Node head, int k) {
+        if (head == null) return head;
+        if (k == 1) return deleteHead(head);
+        Node curr = head;
+        for (int i = 0; i < k - 2; i++) {
+            curr = curr.next;
+        }
+        curr.next = curr.next.next;
+
+        return head;
+
+    }
+
+    public static Node insertSortedLL(Node head, int x) {
+        Node temp = new Node(x);
+        if (head == null) return temp;
+        if (x < head.data) {
+            temp.next = head;
+            return temp;
+        }
+        Node curr = head;
+        while (curr.next != null && curr.next.data < x) {
+            curr = curr.next;
+        }
+        temp.next = curr.next;
+        curr.next = temp;
+        return head;
+    }
 
 
     public static void main(String[] args) {
         Node head = new Node(10);
-        head.next = new Node(30);
-        head.next.next = new Node(20);
+        head.next = new Node(20);
+        head.next.next = new Node(30);
         head.next.next.next = head;
         printList(head);
         System.out.println();
@@ -110,10 +138,16 @@ public class CircularLL {
         System.out.println();
 //        Node head=null;
 //        head = insertAtEnd(head, 45);
-        head = insertAtEndEffcient(head, 45);
-        printList(head);
-        System.out.println();
-        head = deleteHead(head);
+//        head = insertAtEndEffcient(head, 45);
+//        printList(head);
+//        System.out.println();
+//        head = deleteHead(head);
+//        printList(head);
+//        System.out.println();
+//        head = deleteKth(head, 3);
+//        printList(head);
+//        System.out.println();
+        head = insertSortedLL(head, 25);
         printList(head);
     }
 }

@@ -18,6 +18,7 @@ public class nthNode {
             size++;
             temp = temp.next;
         }
+        if (size < pos) return null;
         temp = head;
         int mth = size - pos + 1;
         for (int i = 1; i <= mth - 1; i++) {
@@ -90,7 +91,7 @@ public class nthNode {
 //        System.out.println(temp.data);
 
         display(a);
-        a=deleteNthNode(a, 7);
+        a = deleteNthNode(a, 7);
         System.out.println();
         display(a);
 
